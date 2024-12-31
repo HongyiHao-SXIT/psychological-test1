@@ -1,0 +1,111 @@
+server:
+  port: 8111
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: resources/**,static/**,templates/** #重启目录
+  jackson:
+    default-property-inclusion: non_null
+  application:
+    name: mall-tiny
+  profiles:
+    active: dev
+#  main:
+#    allow-circular-references: true
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  quartz:
+    auto-startup: true # 自动启动
+    job-store-type: jdbc # 任务存储类型
+    scheduler-name: baseScheduler # 调度名称
+    wait-for-jobs-to-complete-on-shutdown: true # 任务调度完成后停止
+    properties:
+      org.quartz.scheduler.instanceName: baseScheduler
+      org.quartz.scheduler.instanceId: AUTO
+      org.quartz.scheduler.rmi.export: false # 关闭远程管理相关配置
+      org.quartz.scheduler.rmi.proxy: false # 关闭远程管理相关配置
+      org.quartz.scheduler.wrapJobExecutionInUserTransaction: false # 关闭远程管理相关配置
+      org.quartz.scheduler.batchTriggerAcquisitionMaxCount: 100 # 一次获取Trigger的最大数量
+      org.quartz.scheduler.batchTriggerAcquisitionFireAheadTimeWindow: 30000 # 获取Trigger的时间窗口
+      org.quartz.jobStore.isClustered: false # 不开启集群
+      org.quartz.jobStore.clusterCheckinInterval: 3000 # 分布式节点有效性检查时间间隔，单位：毫秒,默认值是15000
+      org.quartz.jobStore.misfireThreshold: 300000 # 容许的最大作业延长时间 最大能忍受的触发超时时间
+      org.quartz.jobStore.tablePrefix: QRTZ_ # 数据库表前缀
+      org.quartz.jobStore.acquireTriggersWithinLock: false # 可以提高性能，因为我们对重复调度要求没有那么高
+      org.quartz.threadPool.class: org.springframework.scheduling.quartz.SimpleThreadPoolTaskExecutor
+      org.quartz.threadPool.threadCount: 10 # 任务执行线程
+      org.quartz.threadPool.threadsInheritContextClassLoaderOfInitializingThread: true
+      jobStore:
+        class: org.quartz.impl.jdbcjobstore.JobStoreTX
+        dataSource: ${framework.database.name}
+        driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+        useProperties: false
+        tablePrefix: QRTZ_
+        misfireThreshold: 60000
+        clusterCheckinInterval: 20000
+        isClustered: true
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    auto-mapping-behavior: partial
+    map-underscore-to-camel-case: true
+    #自定义枚举转化类
+    default-enum-type-handler: com.macro.mall.tiny.common.handler.AutoGenericEnumTypeHandler
+
+jwt:
+  tokenHeader: Authorization #JWT存储的请求头
+  secret: mall-admin-secret #JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24*7)
+  tokenHead: 'Bearer '  #JWT负载中拿到开头
+
+redis:
+  database: mall
+  key:
+    admin: 'ums:admin'
+    resourceList: 'ums:resourceList'
+  expire:
+    common: 86400 # 24小时
+
+secure:
+  ignored:
+    urls: #安全路径白名单
+      - /swagger-ui/
+      - /swagger-resources/**
+      - /**/v2/api-docs
+      - /**/*.html
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.jpg
+      - /**/*.jpeg
+      - /**/*.txt
+      - /**/*.svg
+      - /**/*.woff
+      - /**/*.ttf
+      - /favicon.ico
+      - /actuator/**
+      - /druid/**
+      - /admin/login
+      - /admin/register
+      - /admin/info
+      - /admin/logout
+      - /wx/user/**
+      - /wx/jsapi/**
+      - /wx/portal/**
+      - /wx/redirect/**
+      - /portal/**
+      - /wxUser/register
+      - /wxUser/login
+      - /test/test

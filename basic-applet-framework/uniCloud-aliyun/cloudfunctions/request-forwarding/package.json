@@ -1,0 +1,7 @@
+{
+  "name": "request-forwarding",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

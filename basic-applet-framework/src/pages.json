@@ -1,0 +1,162 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/wx-login/wx-login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+        ,{
+            "path" : "pages/wx-h5-login/wx-h5-login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/edit-user-info/edit-user-info",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "完善信息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/register/register",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+        {
+        	"path" : "pages/choose-role/choose-role",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "选择角色",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/commit-psychology-auth/commit-psychology-auth",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "提交心理咨询师资质",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/teacher-details/teacher-details",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/reservation-submit/reservation-submit",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "提交预约",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/reservation-result/reservation-result",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/user-reservation-list/user-reservation-list",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/psychologist-index/psychologist-index",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/test-intro/test-intro",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/start-test/start-test",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/test-result/test-result",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/article-details/article-details",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/user-mind-result/user-mind-result",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
+        }
+    ],
+	"sitemapLocation": "sitemap.json",
+	"globalStyle": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "Weixin",
+		"navigationBarTextStyle": "black",
+		"enablePullDownRefresh": true,
+		"onReachBottomDistance": 60,
+		"usingComponents": {}
+	}
+}
